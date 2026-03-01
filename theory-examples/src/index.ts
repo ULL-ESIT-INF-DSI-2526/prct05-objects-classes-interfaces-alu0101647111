@@ -1,12 +1,42 @@
-export function onePunch(...args: string[]): string {
-  const filtered = args.filter(s => s !== '');
-  if (filtered.length === 0) return 'Broken!';
-  
-  // Encadenamiento de 3 métodos: sort, join y replace
-  return filtered.sort().join(' ').replace(/[ae]/gi, '');
+/**
+ * Adds two __numbers__
+ * @param firstNumber - Consists of the first operand of the addition
+ * @param secondNumber - Consists of the second operand of the addition
+ * @returns The addition of the two numbers `firstNumber` and `secondNumber`
+ * ```typescript
+ * add(1, 7) = 8
+ * ```
+ */
+export function add(firstNumber: number, secondNumber: number): number {
+  return firstNumber + secondNumber;
 }
 
-console.log(onePunch('Beard', 'Jeans', 'Hairbrush', 'Knuckleduster', 'Sand')); 
-console.log(onePunch('Sock', 'Beard', 'Vest', 'Lady', 'Sage'));
-console.log(onePunch('', ''));
-console.log(onePunch());
+/**
+ * Substracts two __numbers__
+ * @param firstNumber - Consists of the first operand of the substraction
+ * @param secondNumber - Consists of the second operand of the substraction
+ * @returns The substraction of the two numbers `firstNumber` and `secondNumber`
+ * ```typescript
+ * sub(1, 7) = -6
+ * ```
+ *
+ */
+export function sub(firstNumber: number, secondNumber: number): number {
+  return firstNumber - secondNumber;
+}
+
+/**
+ *
+ * @param firstNumber - Consists of the first operand of the division
+ * @param secondNumber - Consists of the second operand of the division
+ * @returns The division of the two numbers `firstNumber` and `secondNumber`
+ * ```typescript
+ * div(4, 8) = 0.5
+ * ```
+ */
+export function div(firstNumber: number, secondNumber: number): number {
+  if (secondNumber === 0) {
+    throw new Error("Zero division");
+  }
+  return firstNumber / secondNumber;
+}
