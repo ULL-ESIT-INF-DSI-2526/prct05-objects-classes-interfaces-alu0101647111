@@ -1,5 +1,6 @@
 name: Coveralls
 
+
 on:
   push:
     branches: ["main"]
